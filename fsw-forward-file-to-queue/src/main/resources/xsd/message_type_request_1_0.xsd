@@ -1,0 +1,47 @@
+<xs:schema attributeFormDefault="unqualified"
+	elementFormDefault="qualified"
+	targetNamespace="http://gepardec.at/fsw_poc/xml/message_type_request_1_0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:simpleType name="service_type">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="digitv" />
+			<xs:enumeration value="internet" />
+			<xs:enumeration value="mail" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="message_type">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="service">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="action">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="data">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element type="xs:string" name="country" />
+													<xs:element type="xs:string" name="order_no" />
+													<xs:element type="xs:int" name="product_id" />
+													<xs:element type="xs:string" name="subscription_start" />
+													<xs:element type="xs:string" name="subscription_end" />
+													<xs:element type="xs:string" name="priority" />
+													<xs:element type="xs:byte" name="nofsmartcards" />
+													<xs:element type="xs:string" name="smartcard_list" />
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute type="xs:string" name="name" />
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute type="xs:string" name="name" />
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute type="xs:string" name="name" />
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

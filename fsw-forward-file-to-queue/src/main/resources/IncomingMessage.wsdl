@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="IncomingMessage"
+	targetNamespace="urn:com.example.switchyard:fsw-poc-main:1.0"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:tns="urn:com.example.switchyard:fsw-poc-main:1.0"
+	xmlns:gepardec="http://liwest.at/fsw_poc/xml/message_type_request_1_0"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://gepardec.at/fsw_poc/xml/message_type_request_1_0"
+				schemaLocation="xsd/message_type_request_1_0.xsd" />
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="message_type_request_1_0">
+		<wsdl:part name="arg0" element="gepardec:message_type">
+		</wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="IncomingMessagePortType">
+		<wsdl:operation name="message_type_request_1_0">
+			<wsdl:input name="message_type_request_1_0" message="tns:message_type_request_1_0">
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:portType>
+</wsdl:definitions>
